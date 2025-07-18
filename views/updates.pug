@@ -6,19 +6,20 @@ html
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
   body
     div.container
-        h1 Add a New Video Game Character
+        h1 Add a New Game
         //- The form will POST to the /update-cobj route
         form(action='/update-cobj' method='POST')
             div.form-group
                 label(for='name') Name
                 input(type='text' name='name' id='name' required)
+            //- Updated form fields for publisher and price
             div.form-group
-                label(for='game') Game
-                input(type='text' name='game' id='game' required)
+                label(for='publisher') Publisher
+                input(type='text' name='publisher' id='publisher' required)
             div.form-group
-                label(for='special_ability') Special Ability
-                input(type='text' name='special_ability' id='special_ability' required)
+                label(for='price') Price
+                input(type='number' name='price' id='price' step='any' required)
             
-            button.button(type='submit') Create Character
+            button.button(type='submit') Create Game
 
         a.return-link(href='/') &larr; Return to the homepage

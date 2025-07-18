@@ -12,7 +12,7 @@ app.use(express.json());
 
 // * Please DO NOT INCLUDE the private app access token in your repo. Don't do this practicum in your normal account.
 const PRIVATE_APP_ACCESS_TOKEN = process.env.PRIVATE_APP_ACCESS_TOKEN;
-// Define your custom object type ID. Replace 'p_video_game_characters' with your actual object type ID.
+
 const CUSTOM_OBJECT_TYPE_ID = '2-145042922';
 
 // ===============================================
@@ -29,8 +29,8 @@ app.get('/', async (req, res) => {
     };
 
     // Define the properties you want to retrieve from your custom object
-    // Make sure these property names match the internal names in your HubSpot account.
-    const propertiesToGet = 'name,game,special_ability';
+    // These are the new properties: name, publisher, price
+    const propertiesToGet = 'name,publisher,price';
 
     try {
         // Make a GET request to the HubSpot API to fetch the records
@@ -71,11 +71,12 @@ app.get('/update-cobj', (req, res) => {
 // ===============================================
 app.post('/update-cobj', async (req, res) => {
     // Construct the new record's properties from the form data in req.body
+    // Updated to use name, publisher, and price
     const newRecord = {
         properties: {
             "name": req.body.name,
-            "game": req.body.game,
-            "special_ability": req.body.special_ability
+            "publisher": req.body.publisher,
+            "price": req.body.price
         }
     };
 

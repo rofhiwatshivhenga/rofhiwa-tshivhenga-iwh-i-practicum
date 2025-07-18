@@ -6,24 +6,25 @@ html
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
   body
     div.container
-      h1 Custom Objects: Video Game Characters
-      a.button.add-link(href='/update-cobj') Add a new character
+      h1 Custom Objects Table
+      a.button.add-link(href='/update-cobj') Add/Update this table
       
       if records && records.length > 0
         table.data-table
           thead
             tr
-              //- These headers should match your custom properties
+              //- Updated table headers
               th Name
-              th Game
-              th Special Ability
+              th Publisher
+              th Price
               th Last Modified
           tbody
             each record in records
               tr
+                //- Updated properties to display
                 td= record.properties.name
-                td= record.properties.game
-                td= record.properties.special_ability
+                td= record.properties.publisher
+                td= record.properties.price
                 td= new Date(record.properties.hs_lastmodifieddate).toLocaleDateString()
       else
         p No records found. Why not add one?
