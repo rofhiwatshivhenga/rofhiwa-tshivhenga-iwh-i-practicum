@@ -1,0 +1,24 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/css/style.css')
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+  body
+    div.container
+        h1 Add a New Video Game Character
+        //- The form will POST to the /update-cobj route
+        form(action='/update-cobj' method='POST')
+            div.form-group
+                label(for='name') Name
+                input(type='text' name='name' id='name' required)
+            div.form-group
+                label(for='game') Game
+                input(type='text' name='game' id='game' required)
+            div.form-group
+                label(for='special_ability') Special Ability
+                input(type='text' name='special_ability' id='special_ability' required)
+            
+            button.button(type='submit') Create Character
+
+        a.return-link(href='/') &larr; Return to the homepage

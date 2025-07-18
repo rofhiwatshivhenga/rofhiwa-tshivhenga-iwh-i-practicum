@@ -1,0 +1,29 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/css/style.css')
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+  body
+    div.container
+      h1 Custom Objects: Video Game Characters
+      a.button.add-link(href='/update-cobj') Add a new character
+      
+      if records && records.length > 0
+        table.data-table
+          thead
+            tr
+              //- These headers should match your custom properties
+              th Name
+              th Game
+              th Special Ability
+              th Last Modified
+          tbody
+            each record in records
+              tr
+                td= record.properties.name
+                td= record.properties.game
+                td= record.properties.special_ability
+                td= new Date(record.properties.hs_lastmodifieddate).toLocaleDateString()
+      else
+        p No records found. Why not add one?

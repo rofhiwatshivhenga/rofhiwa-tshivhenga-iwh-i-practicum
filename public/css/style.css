@@ -1,58 +1,103 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-
-body, * {
-    font-family: 'Roboto', sans-serif;
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    background-color: #f4f6f8;
+    color: #33475b;
     margin: 0;
-    padding: 0;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
-    margin: 1rem;
+    color: #004c97;
+    margin-bottom: 24px;
 }
 
-.cards {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-}
-
-.card {
-    flex-basis: 31%;
-    margin: 1rem 0.4rem;
-    padding: 1rem 0.4rem 2.5rem 0.4rem;
-    border: solid 1px lightgrey;
-    border-radius: 15px;
-    box-shadow: 3px 2px 6px lightgrey;
-}
-
-.card__email {
-    font-size: 1rem;
-}
-
-.form-wrapper {
-    font-size: 18px;
-    max-width: 768px;
-    margin: 2rem auto;
-    padding: 2rem;
-    border: solid 1px lightgrey;
-    border-radius: 15px;
-    box-shadow: 3px 2px 6px lightgrey;
-}
-
-label, input {
-    margin-top: 5px;
-    display: block;
-    font-size: inherit;
-}
-
-input[type="text"] {
-    padding: .25rem;
-}
-
-input[type="submit"] {
-    background-color: lightgrey;
+.button, a.button {
+    display: inline-block;
+    background-color: #ff7a59;
+    color: #fff;
+    padding: 12px 20px;
     border: none;
-    padding: .375rem 1rem;
-    margin-top: 10px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 16px;
+}
+
+.button:hover, a.button:hover {
+    background-color: #e06041;
+}
+
+a.add-link {
+    margin-bottom: 20px;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.data-table th, .data-table td {
+    padding: 12px;
+    border: 1px solid #cbd6e2;
+    text-align: left;
+}
+
+.data-table th {
+    background-color: #f4f6f8;
+    font-weight: bold;
+}
+
+.data-table tbody tr:nth-child(even) {
+    background-color: #f9fafb;
+}
+
+.data-table tbody tr:hover {
+    background-color: #f0f3f6;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    padding: 10px;
+    border: 1px solid #cbd6e2;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+a.return-link {
+    display: inline-block;
+    margin-top: 20px;
+    color: #007a8c;
+    text-decoration: none;
+}
+
+a.return-link:hover {
+    text-decoration: underline;
 }
